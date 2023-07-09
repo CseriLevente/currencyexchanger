@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=10" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="indes.js"></script>
+    <title>Exchanger</title>
+  </head>
+  <body>
+    <h1 id="headline">Currency exchanger</h1>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <div class="flex-container">
+      <div class="box">
+        <select name="From" id="From">
+          <option value="">Please choose a currency</option>
+          <option value="GBP">GBP</option>
+          <option value="HUF">HUF</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="PLN">PLN</option>
+          <option value="TRY">TRY</option>
+          <option value="UAH">UAH</option>
+          <option value="RON">RON</option>
+        </select>
+      </div>
+
+      <div>
+        <button id="arrow" onclick="exchanger()">&#8594;</button>
+      </div>
+
+      <div class="box">
+        <select name="To" id="To">
+          <option value="">Please choose a currency</option>
+          <option value="GBP">GBP</option>
+          <option value="HUF">HUF</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="PLN">PLN</option>
+          <option value="TRY">TRY</option>
+          <option value="UAH">UAH</option>
+          <option value="RON">RON</option>
+        </select>
+      </div>
+    </div>
+    <br />
+    <div id="flex-container">
+      <div id="inputcontainer">
+        <input type="number" id="input" />
+      </div>
+      <div id="kimenet">
+        <p id="output"></p>
+      </div>
+    </div>
+  </body>
+</html>
