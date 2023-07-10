@@ -17,7 +17,8 @@ async function exchanger() {
     const exchangeRate = await getExchangeRate(baseCurrency, targetCurrency);
 
     var result = exchangeRate * amount;
-    document.getElementById("output").textContent = result;
+    roundedResult = result.toFixed(2);
+    document.getElementById("output").textContent = roundedResult;
   } catch (error) {
     console.log("BAJ VAN", error);
   }
