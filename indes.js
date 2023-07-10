@@ -27,3 +27,34 @@ async function exchanger() {
 document.getElementById("input").addEventListener("input", function (event) {
   exchanger();
 });
+
+function defSelected(selectElement) {
+  return selectElement.value === "";
+}
+
+function fieldsDisabled(disabled) {
+  var inputField = document.getElementById("input");
+  var outputField = document.getElementById("output");
+
+  inputField.disabled = disabled;
+  outputField.disabled = disabled;
+}
+
+fieldsDisabled(true);
+
+function selectsValid() {
+  var fromSelect = document.getElementById("From");
+  var toSelect = document.getElementById("To");
+
+  return !defSelected(fromSelect) && !defSelected(toSelect);
+}
+
+document.getElementById("From").addEventListener("change", function (event) {
+  var valid = selectsValid();
+  fieldsDisabled(!valid);
+});
+
+document.getElementById("To").addEventListener("change", function (event) {
+  var valid = selectsValid();
+  fieldsDisabled(!valid);
+});

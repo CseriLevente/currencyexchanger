@@ -92,6 +92,10 @@ body {
   order: 4;
 }
 
+#input:disabled {
+  background-color: gray;
+}
+
 @media (max-width: 870px) {
   .flex-container,
   #flex-container {
