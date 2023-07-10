@@ -10,6 +10,11 @@
   <body>
     <h1 id="headline">Currency exchanger</h1>
 
+    <div class="signs">
+      <div id="signFrom"><span>From</span></div>
+      <div id="signTo"><span>To</span></div>
+    </div>
+
     <div class="flex-container">
       <div class="box">
         <select name="From" id="From">
@@ -27,7 +32,7 @@
       </div>
 
       <div>
-        <button id="arrow" onclick="exchanger()">&#8594;</button>
+        <button id="arrow" onclick="swapCurrencies()">&#8644;</button>
       </div>
 
       <div class="box">
@@ -46,6 +51,7 @@
       </div>
     </div>
     <br />
+
     <div id="flex-container">
       <div id="inputcontainer">
         <input type="number" id="input" />

@@ -58,3 +58,14 @@ document.getElementById("To").addEventListener("change", function (event) {
   var valid = selectsValid();
   fieldsDisabled(!valid);
 });
+
+function swapCurrencies() {
+  var fromSelect = document.getElementById("From");
+  var toSelect = document.getElementById("To");
+
+  var tempValue = fromSelect.value;
+  fromSelect.value = toSelect.value;
+  toSelect.value = tempValue;
+
+  exchanger();
+}

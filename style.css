@@ -93,7 +93,19 @@ body {
 }
 
 #input:disabled {
-  background-color: gray;
+  background-color: rgb(212, 210, 210);
+}
+
+.signs {
+  display: flex;
+  flex-direction: row;
+  background-color: #dad7cd;
+  color: #d4a373;
+  border-radius: 10px;
+  font-size: 30px;
+  justify-content: space-between;
+  width: 54%;
+  margin-left: 14%;
 }
 
 @media (max-width: 870px) {
