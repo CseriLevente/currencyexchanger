@@ -13,21 +13,32 @@ async function exchanger() {
   var targetCurrency = document.getElementById("To").value;
   var amountInput = document.getElementById("input");
   var amount = parseFloat(amountInput.value);
+  const errorElement = document.getElementById("error");
 
-  if (isNaN(amount) || amount < 0 || amount > 10000000) {
-    amountInput.value = "";
-    document.getElementById("output").textContent = "";
-    return;
+  let messages = [];
+
+  if (amount < 0) {
+    messages.push("Your number can not be negative");
+  }
+  if (amount > 10000000) {
+    messages.push("Your number can not be greater than 10M");
   }
 
-  try {
-    const exchangeRate = await getExchangeRate(baseCurrency, targetCurrency);
+  if (messages.length > 0) {
+    errorElement.innerText = messages.join(", ");
+    amountInput.value = "";
+    document.getElementById("output").textContent = "";
+  } else {
+    errorElement.innerText = "";
+    try {
+      const exchangeRate = await getExchangeRate(baseCurrency, targetCurrency);
 
-    var result = exchangeRate * amount;
-    roundedResult = result.toFixed(2);
-    document.getElementById("output").textContent = roundedResult;
-  } catch (error) {
-    console.log("BAJ VAN", error);
+      var result = exchangeRate * amount;
+      roundedResult = result.toFixed(2);
+      document.getElementById("output").textContent = roundedResult;
+    } catch (error) {
+      console.log("BAJ VAN", error);
+    }
   }
 }
 
