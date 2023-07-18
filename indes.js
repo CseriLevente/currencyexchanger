@@ -11,7 +11,14 @@ async function getExchangeRate(baseCurrency, targetCurrency) {
 async function exchanger() {
   var baseCurrency = document.getElementById("From").value;
   var targetCurrency = document.getElementById("To").value;
-  var amount = document.getElementById("input").value;
+  var amountInput = document.getElementById("input");
+  var amount = parseFloat(amountInput.value);
+
+  if (isNaN(amount) || amount < 0 || amount > 10000000) {
+    amountInput.value = "";
+    document.getElementById("output").textContent = "";
+    return;
+  }
 
   try {
     const exchangeRate = await getExchangeRate(baseCurrency, targetCurrency);
