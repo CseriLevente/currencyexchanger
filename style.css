@@ -53,8 +53,8 @@ body {
   gap: 20%;
 }
 
-#inputcontainer,
-#kimenet {
+#input-container,
+#output-container {
   background-color: #e9edc9;
   padding: 10px;
   color: #d4a373;
@@ -80,7 +80,7 @@ body {
   outline: none;
 }
 
-#inputcontainer {
+#input-container {
   order: 2;
 }
 
@@ -88,7 +88,7 @@ body {
   order: 3;
 }
 
-#kimenet {
+#output-container {
   order: 4;
 }
 
@@ -108,7 +108,7 @@ body {
   margin-left: 14%;
 }
 
-#error {
+.error {
   color: red;
   text-align: center;
   margin-bottom: 10px;
@@ -122,8 +122,8 @@ body {
   }
   #From,
   #To,
-  #inputcontainer,
-  #kimenet,
+  #input-container,
+  #output-container,
   #arrow {
     width: 100%;
   }

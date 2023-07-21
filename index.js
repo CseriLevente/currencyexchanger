@@ -10,12 +10,12 @@ async function getExchangeRate(baseCurrency, targetCurrency) {
 
 async function exchanger() {
   var baseCurrency = document.getElementById("From").value;
-  var targetCurrency = document.getElementById("To").value;
-  var amountInput = document.getElementById("input");
-  var amount = parseFloat(amountInput.value);
+  const targetCurrency = document.getElementById("To").value;
+  const amountInput = document.getElementById("input");
+  const amount = parseFloat(amountInput.value);
   const errorElement = document.getElementById("error");
 
-  let messages = [];
+  const messages = [];
 
   if (amount < 0) {
     messages.push("Your number can not be negative");
